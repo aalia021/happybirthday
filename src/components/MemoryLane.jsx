@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import carImg from "../assets/car.png";
 import tvstatic from "../assets/tv-static.mp4";
-import video from "../assets/video.mp4";
 import tvon from "../assets/tv-on.mp3";
 
 export default function MemoryLane() {
@@ -72,14 +71,12 @@ export default function MemoryLane() {
             <source src={tvstatic} type="video/mp4" />
           </video>
         ) : tvOn && !showChannelText ? (
-          <video
+          <iframe
             className="w-full h-full object-contain rounded"
-            autoPlay
-            controls
-            playsInline
-          >
-            <source src={video} type="video/mp4" />
-          </video>
+            src="https://drive.google.com/file/d/1G4k5zDvK9NMivVuQYgQaW8fXziL5iSV-/preview"
+            allow="autoplay"
+            allowFullScreen
+          ></iframe>
         ) : (
           <div className="w-full h-full bg-black" />
         )}
@@ -104,7 +101,6 @@ export default function MemoryLane() {
       </div>
 
       {/* 🎮 CTA */}
-      {/* 🎮 🎬 Choose Movie or Game */}
       {tvOn && !playStatic && !showChannelText && (
         <motion.div
           className="mt-10 flex gap-6 z-30"
