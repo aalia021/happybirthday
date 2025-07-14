@@ -1,0 +1,68 @@
+/* DiscoBall.css */
+#discoBallLight {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  margin-left: -50px;
+  border-radius: 100%;
+  background-color: white;
+  opacity: 0.2;
+  filter: blur(20px);
+}
+
+#discoBall {
+  transform-style: preserve-3d;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  margin-left: -50px;
+  animation: rotateDiscoBall 18s linear infinite;
+}
+
+#discoBallMiddle {
+  height: 100%;
+  border-radius: 100%;
+  background: linear-gradient(to bottom, #111, #333);
+  animation: rotateDiscoBallMiddle 18s linear infinite;
+}
+
+.square {
+  transform-style: preserve-3d;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+}
+
+@keyframes rotateDiscoBall {
+  0% {
+    transform: rotateX(90deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(90deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotateDiscoBallMiddle {
+  0% {
+    transform: rotateX(90deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(90deg) rotateY(-360deg);
+  }
+}
+
+@keyframes reflect {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
